@@ -9,4 +9,6 @@ const shopItemSchema = new mongoose.Schema({
   genre: { type: String },
 });
 
+shopItemSchema.index({ title: "text", description: "text" });
+
 module.exports = mongoose.model("ShopItem", shopItemSchema);

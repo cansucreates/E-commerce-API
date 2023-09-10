@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Cart = require("./cart");
 
 const addressSchema = new mongoose.Schema({
   apartmentNo: { type: Number },
@@ -49,9 +48,12 @@ const customerSchema = new mongoose.Schema(
     phoneNumber: {
       type: Number,
     },
-    cart: {
-      type: [Cart],
-    },
+    cart: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Cart",
+      },
+    ],
   },
   {
     timestamps: true,
