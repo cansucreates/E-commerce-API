@@ -1,0 +1,68 @@
+{
+    "terminal.integrated.gpuAcceleration": "off",
+    "synthwave84.brightness": 1,
+    "git.openRepositoryInParentFolders": "always",
+    "terminal.integrated.profiles.windows": {
+      "PowerShell": {
+        "source": "PowerShell",
+        "icon": "terminal-powershell"
+      },
+      "Command Prompt": {
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ],
+        "args": [],
+        "icon": "terminal-cmd"
+      },
+      "Git Bash": {
+        "source": "Git Bash"
+      },
+      "Ubuntu (WSL)": {
+        "path": "C:\\WINDOWS\\System32\\wsl.exe",
+        "args": ["-d", "Ubuntu"]
+      }
+    },
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
+    "workbench.preferredDarkColorTheme": "SynthWave '84",
+    "workbench.preferredHighContrastColorTheme": "SynthWave '84",
+    "workbench.preferredLightColorTheme": "SynthWave '84",
+    "workbench.preferredHighContrastLightColorTheme": "SynthWave '84",
+    "tabnine.experimentalAutoImports": true,
+    "workbench.colorCustomizations": {
+      "workbench.colorTheme": "SynthWave '84",
+      "synthwave84.brightness": 1
+    },
+    "liveServer.settings.useLocalIp": true,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "workbench.editorAssociations": {
+      "*.html": "default"
+    },
+    "workbench.colorTheme": "SynthWave '84",
+    "window.titleBarStyle": "custom",
+    "vscode_vibrancy.imports": [
+
+    
+    
+    "/path/to/file"],
+    "vscode_vibrancy.opacity": 0,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 1,
+    "editor.formatOnSave": true,
+    "githubPullRequests.pullBranch": "never",
+    "workbench.iconTheme": "material-icon-theme",
+    "redhat.telemetry.enabled": false,
+    "[xml]": {
+      "editor.defaultFormatter": "redhat.vscode-xml"
+    },
+    "vscode_vibrancy.preventFlash": false,
+    "vscode_vibrancy.refreshInterval": 10,
+    "accessibility.dimUnfocused.opacity": 0.2,
+    "workbench.productIconTheme": "emoji-product-icons-fun",
+    "files.autoSave": "onFocusChange",
+    "git.ignoreLimitWarning": true
+  }
+  

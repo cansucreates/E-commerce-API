@@ -54,6 +54,10 @@ const customerSchema = new mongoose.Schema(
         ref: "Cart",
       },
     ],
+    isAdmin: {
+      type: Boolean,
+      default: false, // default to regular customers
+    },
   },
   {
     timestamps: true,

@@ -1,4 +1,66 @@
 const ShopItem = require("../models/shopItems");
+const Order = require("../models/order");
+const Customer = require("../models/customer");
+const bcrypt = require("bcrypt");
+
+// fetch all the orders
+const fetchOrders = async (req, res) => {
+  try {
+    const orders = await Order.find();
+
+    res.status(200).json(orders);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// fetch all customers
+const fetchCustomers = async (req, res) => {
+  try {
+    const customers = await Customer.find({ isAdmin: false }, "-password"); // exclude password field and admins
+
+    res.status(200).json(customers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// create a new admin account
+const createAdmin = async (req, res) => {
+  const { userName, email, password } = req.body;
+
+  try {
+    // if the admin already exists with the provided email
+    const adminExists = await Customer.findOne({ email });
+
+    if (adminExists) {
+      return res
+        .status(400)
+        .json({ error: "Admin already exists with this email" });
+    }
+
+    // a new admin user
+    const newAdmin = new Customer({
+      userName,
+      email,
+      password,
+      isAdmin: true, // isAdmin field to true for the new admin
+    });
+
+    // hash the password
+    const saltRounds = 10;
+    newAdmin.password = bcrypt.hashSync(password, saltRounds);
+
+    await newAdmin.save();
+
+    res.status(201).json({ message: "New admin created successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
 
 // adding Item
 const addItem = async (req, res) => {
@@ -103,6 +165,9 @@ const searchItem = async (req, res) => {
 };
 
 module.exports = {
+  fetchOrders,
+  fetchCustomers,
+  createAdmin,
   addItem,
   updateItem,
   deleteItem,
