@@ -48,4 +48,4 @@ The E-commerce Mini API is organized into different versions, each of which adds
   - Customer authorization for customer-specific routes
   - Fetch previous orders
   - Fetch and update customer profile
-  - Update the shopping cart
+  - Update the shopping cart.
