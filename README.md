@@ -1,4 +1,4 @@
-# E-commerce Mini API -
+# E-commerce Mini API
 
 Welcome to the E-commerce Mini API project! This API is designed to serve as the backend for an e-commerce platform, offering a range of features for both administrators and customers. It is built using Node.js, Express, MongoDB, and Mongoose.
 
